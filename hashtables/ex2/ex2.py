@@ -38,3 +38,18 @@ def reconstruct_trip(tickets, length):
             route[j] = cache[route[j-1]]
 
     return route
+
+
+# tickets = [
+#     Ticket{ source: "PIT", destination: "ORD"},
+#     Ticket{ source: "XNA", destination: "CID" },
+#     Ticket{ source: "SFO", destination: "BHM" },
+#     Ticket{ source: "FLG", destination: "XNA" },
+#     Ticket{ source: "NONE", destination: "LAX" },
+#     Ticket{ source: "LAX", destination: "SFO" },
+#     Ticket{ source: "CID", destination: "SLC" },
+#     Ticket{ source: "ORD", destination: "NONE" },
+#     Ticket{ source: "SLC", destination: "PIT" },
+#     Ticket{ source: "BHM", destination: "FLG" }
+# ]
+# print(reconstruct_trip(tickets))
