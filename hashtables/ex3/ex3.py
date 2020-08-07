@@ -17,12 +17,12 @@ def intersection(arrays):
     """
     cache = {}
     result = []
-    for num in arrays:
-        for num2 in num:
-            if num2 in cache:
-                cache[num2] += 1
+    for arr in arrays:
+        for num in arr:
+            if num in cache:
+                cache[num] += 1
             else:
-                cache[num2] = 1
+                cache[num] = 1
     for num in cache:
         if cache[num] == len(arrays):
             result.append(num)
