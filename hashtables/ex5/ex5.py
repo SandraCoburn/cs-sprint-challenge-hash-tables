@@ -11,11 +11,12 @@ def finder(files, queries):
     """
     cache = {}
     result = []
-    for file in files:
-        if file not in cache:
-            cache[file] = file
+    for file in range(len(files)):
+        cache[files[file]] = file
+       
         for char in queries:
             if file.endswith(char):
+                # cache[files[file]] = file 
                 result.append(file)
     return result
 

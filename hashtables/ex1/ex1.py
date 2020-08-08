@@ -14,19 +14,25 @@ output: [ 3, 1 ]  # since these are the indices of weights 15 and 6 whose sum eq
     # Your code here
 def get_indices_of_item_weights(weights, length, limit):
     cache = {}
-    for index, num in enumerate(weights):
-        for index2, num2 in enumerate(weights):
-            if num + num2 == limit:
-                if num > num2:
-                    if index not in cache:
-                        cache[index] = index2
-                        match = index, index2
-                        return match
-                else: 
-                    cache[index2] = index
-                    match = index2, index
-                    return match
-    
+    for num in range(len(weights)):
+        cache[weights[num]] = num
+    for i in range(len(weights)):
+        if (limit-weights[i]) in cache:
+            return [cache[limit-weights[i]], i]
+
+    # for index, num in enumerate(weights):
+    #     for index2, num2 in enumerate(weights):
+    #         if num + num2 == limit:
+    #             if num > num2:
+    #                 if index not in cache:
+    #                     cache[index+1] = None
+    #                     match = index, index2
+    #                     print("Indexes", index, index2)
+    #                     return match
+    #             else: 
+    #                 cache[index2 + 1] = index
+    #                 match = index2, index
+    #                 return match
     return None
 
 weights = [ 4, 6, 10, 15, 16 ]
