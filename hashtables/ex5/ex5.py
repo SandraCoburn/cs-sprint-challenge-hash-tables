@@ -10,13 +10,18 @@ def finder(files, queries):
     YOUR CODE HERE
     """
     cache = {}
+    query_c = {}
     result = []
-    for file in range(len(files)):
-        cache[files[file]] = file
-       
-        for char in queries:
+    for file in files:
+        cache[file] = None
+        #print(file)
+    for i in queries:
+        query_c[i] = None
+    for file in cache:
+
+        for char in query_c:
             if file.endswith(char):
-                # cache[files[file]] = file 
+                #cache[file] = file
                 result.append(file)
     return result
 

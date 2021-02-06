@@ -16,23 +16,25 @@ def get_indices_of_item_weights(weights, length, limit):
     cache = {}
     for num in range(len(weights)):
         cache[weights[num]] = num
+        print("Cache is: ", cache, num)
     for i in range(len(weights)):
+        print("second loop: ", i)
         if (limit-weights[i]) in cache:
+            print("limit:",limit-weights[i], i)
             return [cache[limit-weights[i]], i]
 
     # for index, num in enumerate(weights):
+    #     print("first loop:", index, num)
     #     for index2, num2 in enumerate(weights):
+    #         print("second loop", index2, num2)
     #         if num + num2 == limit:
+    #             print("if state: ", num, num2, limit)
     #             if num > num2:
-    #                 if index not in cache:
-    #                     cache[index+1] = None
-    #                     match = index, index2
-    #                     print("Indexes", index, index2)
-    #                     return match
-    #             else: 
-    #                 cache[index2 + 1] = index
-    #                 match = index2, index
-    #                 return match
+    #                 cache[index] = index2
+    #                 return cache
+    #             else:
+    #                 cache[index2] = index
+    #                 return cache   
     return None
 
 weights = [ 4, 6, 10, 15, 16 ]
